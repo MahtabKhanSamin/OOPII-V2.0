@@ -1,0 +1,5 @@
+a=input("Enter your string: ")
+words=a.split()
+words.sort()
+a=" ".join(words)
+print(a)
