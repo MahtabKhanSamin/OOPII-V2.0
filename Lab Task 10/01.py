@@ -53,6 +53,16 @@ class admin(person):
         print("Admin Name: ", self.fname, self.lname)
         print("Joining Year: ", self.joining)
 
+class employee(teacher,admin):
+    def __init__(self,a,b,c,d):
+        print("Employee Constructor")
+        super().__init__(a,b,c)
+        self.id=d
+    def display(self):
+        print("Employee Name: ",self.fname,self.lname)
+        print("Joining Year: ", self.joining)
+        print("ID: ",self.id)
+
 p1=person("Mahtab","Khan")
 p1.display()
 print()
@@ -71,3 +81,5 @@ print()
 g1=graduated("Mahtab","Khan", 2026, "0242220005101608")
 g1.display()
 print()
+e1=employee("Mahtab","Khan", 2026, "0242220005101608")
+e1.display()
