@@ -1,5 +1,6 @@
 class person:
     def __init__(self,a,b):
+        print("Person Constructor")
         self.fname=a
         self.lname=b
     def display(self):
@@ -8,16 +9,36 @@ class person:
 class student(person):
     def __init__(self,a,b,c):
         print("Student Constructor")
-        super().__init__(a,b)
+        person.__init__(self,a,b)
         self.graduation=c
     def display(self):
         print("Student Name: ",self.fname,self.lname)
         print("Graduation Year: ", self.graduation)
 
+class alumni(student):
+    def __init__(self,a,b,c,d):
+        print("Alumni Constructor")
+        student.__init__(self,a,b,c)
+        self.id=d
+    def display(self):
+        print("Student Name: ",self.fname,self.lname)
+        print("Graduation Year: ", self.graduation)
+        print("ID: ",self.id)
+
+class graduated(student):
+    def __init__(self,a,b,c,d):
+        print("Graduated Constructor")
+        student.__init__(self,a,b,c)
+        self.id=d
+    def display(self):
+        print("Student Name: ",self.fname,self.lname)
+        print("Graduation Year: ", self.graduation)
+        print("ID: ",self.id)
+
 class teacher(person):
     def __init__(self, a, b, c):
         print("Teacher Constructor")
-        super().__init__(a, b)
+        person.__init__(self,a, b)
         self.joining = c
     def display(self):
         print("Teacher Name: ", self.fname, self.lname)
@@ -26,7 +47,7 @@ class teacher(person):
 class admin(person):
     def __init__(self, a, b, c):
         print("Admin Constructor")
-        super().__init__(a, b)
+        person.__init__(self,a, b)
         self.joining = c
     def display(self):
         print("Admin Name: ", self.fname, self.lname)
@@ -43,3 +64,10 @@ t1.display()
 print()
 a1=admin("Mahtab","Khan", 2024)
 a1.display()
+print()
+al1=alumni("Mahtab","Khan", 2026, "0242220005101608")
+al1.display()
+print()
+g1=graduated("Mahtab","Khan", 2026, "0242220005101608")
+g1.display()
+print()
