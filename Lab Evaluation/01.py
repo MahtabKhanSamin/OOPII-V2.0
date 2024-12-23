@@ -20,7 +20,7 @@ class Student(ABC):
 
 class Undergraduate(Student):
     def __init__(self,a,b,c,d):
-        super().__init__(a,b,c)
+        Student.__init__(self,a,b,c)
         self.__CreditHour=d
     def getCredit(self):
         return self.__CreditHour
